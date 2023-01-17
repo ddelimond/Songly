@@ -52,3 +52,5 @@ ${activeSong?.title === song.title ? 'flex bg-black bg-opacity-70' : 'hidden'}
 }
 
 export default SongCard;
+
+
