@@ -1,5 +1,9 @@
 import React from 'react';
 
-const CountryTracks = () => <div>CountryTracks</div>;
+const CountryTracks = () => {
+    return (
+        <div>Country Tracks</div>
+    )
+};
 
 export default CountryTracks;

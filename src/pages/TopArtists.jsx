@@ -1,3 +1,12 @@
-const TopArtists = () => <div>TopArtists</div>;
+const TopArtists = () => {
+
+    return (
+        <div>Top Artists</div>
+    )
+
+}
+
+
+
 
 export default TopArtists;
