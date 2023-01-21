@@ -1,12 +1,31 @@
+
+import { Error, Loader, ArtistCard } from '../components';
+import { useGetTopChartsQuery } from '../redux/services/shazamCore';
 const TopArtists = () => {
 
+    const { data, isFetching, error } = useGetTopChartsQuery();
+
+    if (isFetching) return <Loader title="Loading Top Artist, Please wait..." />
+    if (error) return <Error />
+
+
     return (
-        <div>Top Artists</div>
+        <div className='flex flex-col'>
+            <h2 className='font-bold text-3xl text-[#20615B] text-left mt-4 mb-10'>
+                Discover Top Artist
+            </h2>
+
+            <div className="flex flex-wrap sm:justify-start justify-center gap-8">
+                {data?.map((track) => (
+                    <ArtistCard
+                        key={track.key}
+                        track={track}
+
+                    />
+                ))}
+            </div>
+        </div>
     )
-
-}
-
-
-
+};
 
 export default TopArtists;

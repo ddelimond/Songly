@@ -13,7 +13,7 @@ const SongDetails = () => {
     console.log(songid)
     const { data: songData, isFetching: isFetchingSongDetails } = useGetSongDetailsQuery({ songid })
     const { data, isFetching, isFetchingRelatedSongs, error } = useGetSongRelatedQuery({ songid })
-    console.log(data)
+
     const handlePauseClick = () => {
         dispatch(playPause(false));
     };
