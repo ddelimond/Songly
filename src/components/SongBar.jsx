@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { no_image } from '../assets';
 
 
 
@@ -17,7 +18,8 @@ const SongBar = ({ song, i, artistId, isPlaying, activeSong, handlePauseClick, h
       <div className="flex-1 flex flex-row justify-between items-center">
         <img
           className="w-20 h-20 rounded-lg"
-          src={artistId ? song?.attributes?.artwork?.url.replace('{w}', '125').replace('{h}', '125') : song?.images?.coverart || '/src/images/album_art_itunes_by_stainless2_d3kxnbe.png'}
+          src={artistId ? song?.attributes?.artwork?.url.replace('{w}', '125').replace('{h}', '125') : song?.images?.coverart ||
+            no_image}
           alt={song?.title}
         />
         <div className="flex-1 flex flex-col justify-center mx-3">

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import PlayPause from "./PlayPause";
 import { playPause, setActiveSong } from "../redux/features/playerSlice";
+import { no_image } from '../assets';
 
 
 const SongCard = ({ song, i, isPlaying, activeSong, data }) => {
@@ -33,7 +34,7 @@ ${activeSong?.title === song.title ? 'flex bg-black bg-opacity-70' : 'hidden'}
           handlePause={handlePauseClick}
         />
       </div>
-      <img src={song.images?.coverart || '/src/images/album_art_itunes_by_stainless2_d3kxnbe.png'} />
+      <img src={song.images?.coverart || no_image} />
     </div>
     <div className="mt-4 flex flex-col" >
       <p className="font-semibold text-lg text-white truncate">
